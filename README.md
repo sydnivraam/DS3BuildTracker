@@ -26,9 +26,11 @@ Weapon/Shield and Armor menus also provide an option for viewing elements by wea
 
 Rings and magic will also provide acquisition descriptions, allowing this application to also serve as a guide for finding these objects in the game
 
+Build saving is now implemented but only provides functionality for weapons and shields currently. Work is underway on armor, rings, and spells.
+
 # Roadmap/To-Do
 
-Implement build saving
+Implement armor, rings, and spells within build saving module
 
 Implement proper input error handling
 
