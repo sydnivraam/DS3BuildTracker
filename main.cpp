@@ -16,6 +16,7 @@
 #include "CSVParser.h"
 #include "Menus.h"
 #include "Displays.h"
+#include "Build.h"
 
 using namespace std;
 
@@ -30,21 +31,11 @@ const string CSV_PATH_RING = "assets/Dark_Souls_3_Rings.csv";
 const string CSV_PATH_SORCERY = "assets/Dark_Souls_3_Sorceries.csv";
 const string CSV_PATH_MIRACLE = "assets/Dark_Souls_3_Miracles.csv";
 const string CSV_PATH_PYROMANCY = "assets/Dark_Souls_3_Pyromancies.csv";
+const string TXT_PATH_BUILD = "assets/Your_Saved_Builds.txt";
 
-struct Build
-{
-    int buildID = -1;
-    Weapon weaponR1;
-    Weapon weaponR2;
-    Weapon weaponR3;
-    Weapon weaponL1;
-    Weapon weaponL2;
-    Weapon weaponL3;
-    Armor armorHead;
-    Armor armorChest;
-    Armor armorLeg;
-    Armor armorFeet;
-};
+//============================================================================
+// Main function
+//============================================================================
 
 int main()
 {
@@ -55,6 +46,7 @@ int main()
     vector<Sorcery> sorceryList = loadSorceries(CSV_PATH_SORCERY);
     vector<Miracle> miracleList = loadMiracles(CSV_PATH_MIRACLE);
     vector<Pyromancy> pyromancyList = loadPyromancies(CSV_PATH_PYROMANCY);
+    vector<Build> buildList = loadBuilds(TXT_PATH_BUILD);
 
     int choice = 0;
 
@@ -69,8 +61,8 @@ int main()
         cout << "*  1. Weapons & Shields                    *" << endl;
         cout << "*  2. Armor & Rings                        *" << endl;
         cout << "*  3. Magic                                *" << endl;
-        cout << "*  9. New Build                            *" << endl;
-        cout << "*  10. Load Build                          *" << endl;
+        cout << "*  4. Build Management                     *" << endl;
+        cout << "*                                          *" << endl;
         cout << "*  99. Exit                                *" << endl;
         cout << "*                                          *" << endl;
         cout << "********************************************" << endl;
@@ -94,20 +86,11 @@ int main()
             magicMenu(sorceryList, miracleList, pyromancyList);
         }
 
-        /*fix me
-         if (choice) == 9)
-         {
-         new build
-         }
-         */
-
-        /*fix me
-         if (choice) == 10)
-         {
-         load build
-         }
-         */
-
+        else if (choice == 4)
+        {
+            buildMenu(TXT_PATH_BUILD, buildList, weaponList, shieldList, armorList, ringList, sorceryList, miracleList, pyromancyList);
+        }
+         
         else if (choice != 99)
         {
             cout << "\nInvalid choice.\nPlease enter a number corresponding to the menu's available options.\n" << endl;

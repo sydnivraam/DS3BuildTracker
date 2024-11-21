@@ -1,12 +1,16 @@
 #include "Menus.h"
 
 /*
-* Displays the menu that contains commands for displaying different weapons data
+* Displays the menu that contains commands for displaying different weapon and shield data
+* 
+* @param weaponList the list of weapons that will be used in the menu
+* @param shieldList the list of shields that will be used in the menu
 */
 void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
 {
     std::string input; // stores user input
     int choice = 0;
+    int i = 0;
 
     while (choice != 99)
     {
@@ -30,7 +34,7 @@ void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
         if (choice == 1)
         {
             std::cout << "\n----------------------------------------------------" << std::endl;
-            for (int i = 0; i < weaponList.size(); ++i)
+            for (i = 0; i < weaponList.size(); ++i)
             {
                 std::cout << weaponList[i].weaponID << ": " << weaponList[i].weaponName << std::endl;
             }
@@ -40,7 +44,7 @@ void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
         else if (choice == 2)
         {
             std::cout << "\n----------------------------------------------------" << std::endl;
-            for (int i = 0; i < weaponList.size(); ++i)
+            for (i = 0; i < weaponList.size(); ++i)
             {
                 displayWeapon(weaponList.at(i));
             }
@@ -56,7 +60,7 @@ void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
             "Spear", "Staff", "Straight Sword", "Talisman", "Ultra Greatsword", "Whip" };
 
             std::cout << "Weapon Types:" << std::endl;
-            for (int i = 0; i < weaponTypes.size(); ++i)
+            for (i = 0; i < weaponTypes.size(); ++i)
             {
                 std::cout << "  " << i + 1 << ". " << weaponTypes.at(i) << std::endl;
                 if (i == 23)
@@ -70,7 +74,7 @@ void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
             std::cout << std::endl;
             if (stoi(input) > 0 && stoi(input) < 25)
             {
-                for (int i = 0; i < weaponList.size(); ++i)
+                for (i = 0; i < weaponList.size(); ++i)
                 {
                     if (weaponList[i].weaponType == weaponTypes.at(stoi(input) - 1))
                     {
@@ -89,7 +93,7 @@ void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
             std::cout << "\nEnter the weapon ID to be displayed: ";
             std::cin >> input;
             std::cout << "\n\n";
-            for (int i = 0; i < weaponList.size(); ++i)
+            for (i = 0; i < weaponList.size(); ++i)
             {
                 if (weaponList[i].weaponID == stoi(input))
                 {
@@ -109,7 +113,7 @@ void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
         else if (choice == 5)
         {
             std::cout << "\n----------------------------------------------------" << std::endl;
-            for (int i = 0; i < shieldList.size(); ++i)
+            for (i = 0; i < shieldList.size(); ++i)
             {
                 std::cout << shieldList[i].shieldID << ": " << shieldList[i].shieldName << std::endl;
             }
@@ -119,7 +123,7 @@ void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
         else if (choice == 6)
         {
             std::cout << "\n----------------------------------------------------" << std::endl;
-            for (int i = 0; i < shieldList.size(); ++i)
+            for (i = 0; i < shieldList.size(); ++i)
             {
                 displayShield(shieldList.at(i));
                 if (i < 62)
@@ -139,7 +143,7 @@ void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
             std::vector<std::string> shieldTypes = { "Small Shield", "Standard Shield", "Greatshield" };
 
             std::cout << "Shield Types:" << std::endl;
-            for (int i = 0; i < shieldTypes.size(); ++i)
+            for (i = 0; i < shieldTypes.size(); ++i)
             {
                 std::cout << "  " << i + 1 << ". " << shieldTypes.at(i) << std::endl;
                 if (i == 2)
@@ -153,7 +157,7 @@ void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
             std::cout << std::endl;
             if (stoi(input) > 0 && stoi(input) < 4)
             {
-                for (int i = 0; i < shieldList.size(); ++i)
+                for (i = 0; i < shieldList.size(); ++i)
                 {
                     if (shieldList[i].shieldType == shieldTypes.at(stoi(input) - 1))
                     {
@@ -172,7 +176,7 @@ void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
             std::cout << "\nEnter the shield ID to be displayed: ";
             std::cin >> input;
             std::cout << "\n\n";
-            for (int i = 0; i < shieldList.size(); ++i)
+            for (i = 0; i < shieldList.size(); ++i)
             {
                 if (shieldList[i].shieldID == stoi(input))
                 {
@@ -198,12 +202,16 @@ void weaponMenu(std::vector<Weapon> weaponList, std::vector<Shield> shieldList)
 }
 
 /*
-* Displays the menu that contains commands for displaying different armor data
+* Displays the menu that contains commands for displaying different armor and ring data
+* 
+* @param armorList the list of armor that will be used in the menu
+* @param ringList the list of rings that will be used in the menu
 */
 void armorMenu(std::vector<Armor> armorList, std::vector<Ring> ringList)
 {
     std::string input;
     int choice = 0;
+    int i = 0;
 
     while (choice != 99)
     {
@@ -227,7 +235,7 @@ void armorMenu(std::vector<Armor> armorList, std::vector<Ring> ringList)
         if (choice == 1)
         {
             std::cout << "\n----------------------------------------------------\n" << std::endl;
-            for (int i = 0; i < armorList.size(); ++i)
+            for (i = 0; i < armorList.size(); ++i)
             {
                 std::cout << armorList[i].armorID << ": " << armorList[i].armorName << std::endl;
             }
@@ -237,7 +245,7 @@ void armorMenu(std::vector<Armor> armorList, std::vector<Ring> ringList)
         else if (choice == 2)
         {
             std::cout << "\n----------------------------------------------------\n" << std::endl;
-            for (int i = 0; i < armorList.size(); ++i)
+            for (i = 0; i < armorList.size(); ++i)
             {
                 displayArmor(armorList.at(i));
                 if (i < armorList.size() - 1)
@@ -269,7 +277,7 @@ void armorMenu(std::vector<Armor> armorList, std::vector<Ring> ringList)
             "Vilhelm's Set", "Winged Knight Set", "Worker Set", "Xanthous Set", "Wolf Knight Set", "Wolnir's Set" };
 
             std::cout << "Armor Sets:" << std::endl;
-            for (int i = 0; i < armorSets.size(); ++i)
+            for (i = 0; i < armorSets.size(); ++i)
             {
                 std::cout << "  " << i + 1 << ". " << armorSets.at(i) << std::endl;
                 if (i == 90)
@@ -283,7 +291,7 @@ void armorMenu(std::vector<Armor> armorList, std::vector<Ring> ringList)
             std::cout << std::endl;
             if (stoi(input) > 0 && stoi(input) < 92)
             {
-                for (int i = 0; i < armorList.size(); ++i)
+                for (i = 0; i < armorList.size(); ++i)
                 {
                     if (armorList[i].armorSet == armorSets.at(stoi(input) - 1))
                     {
@@ -302,7 +310,7 @@ void armorMenu(std::vector<Armor> armorList, std::vector<Ring> ringList)
             std::cout << "\nEnter the armor ID to be displayed: ";
             std::cin >> input;
             std::cout << "\n\n";
-            for (int i = 0; i < armorList.size(); ++i)
+            for (i = 0; i < armorList.size(); ++i)
             {
                 if (armorList[i].armorID == stoi(input))
                 {
@@ -322,7 +330,7 @@ void armorMenu(std::vector<Armor> armorList, std::vector<Ring> ringList)
         else if (choice == 5)
         {
             std::cout << "\n----------------------------------------------------\n" << std::endl;
-            for (int i = 0; i < ringList.size(); ++i)
+            for (i = 0; i < ringList.size(); ++i)
             {
                 std::cout << ringList[i].ringID << ": " << ringList[i].ringName << std::endl;
             }
@@ -332,7 +340,7 @@ void armorMenu(std::vector<Armor> armorList, std::vector<Ring> ringList)
         else if (choice == 6)
         {
             std::cout << "\n----------------------------------------------------\n" << std::endl;
-            for (int i = 0; i < ringList.size(); ++i)
+            for (i = 0; i < ringList.size(); ++i)
             {
                 displayRing(ringList.at(i));
                 if (i < ringList.size() - 1)
@@ -346,7 +354,7 @@ void armorMenu(std::vector<Armor> armorList, std::vector<Ring> ringList)
         else if (choice == 7)
         {
             std::cout << "\n----------------------------------------------------\n" << std::endl;
-            for (int i = 0; i < ringList.size(); ++i)
+            for (i = 0; i < ringList.size(); ++i)
             {
                 displayRingWithAcq(ringList.at(i));
                 if (i < ringList.size() - 1)
@@ -362,7 +370,7 @@ void armorMenu(std::vector<Armor> armorList, std::vector<Ring> ringList)
             std::cout << "\nEnter the ring ID to be displayed: ";
             std::cin >> input;
             std::cout << "\n\n";
-            for (int i = 0; i < ringList.size(); ++i)
+            for (i = 0; i < ringList.size(); ++i)
             {
                 if (ringList[i].ringID == stoi(input))
                 {
@@ -389,11 +397,16 @@ void armorMenu(std::vector<Armor> armorList, std::vector<Ring> ringList)
 
 /*
 * Displays the menu that contains commands for displaying different magic data
+* 
+* @param sorceryList the list of sorceries that will be used in the menu
+* @param miracleList the list of miracles that will be used in the menu
+* @param pyromancyList the list of pyromancies that will be used in the menu
 */
 void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleList, std::vector<Pyromancy> pyromancyList)
 {
     std::string input;
     int choice = 0;
+    int i = 0;
 
     while (choice != 99)
     {
@@ -418,7 +431,7 @@ void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleLis
         if (choice == 1)
         {
             std::cout << "\n----------------------------------------------------\n" << std::endl;
-            for (int i = 0; i < sorceryList.size(); ++i)
+            for (i = 0; i < sorceryList.size(); ++i)
             {
                 std::cout << sorceryList[i].sorceryID << ": " << sorceryList[i].sorceryName << std::endl;
             }
@@ -428,7 +441,7 @@ void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleLis
         else if (choice == 2)
         {
             std::cout << "\n----------------------------------------------------\n" << std::endl;
-            for (int i = 0; i < sorceryList.size(); ++i)
+            for (i = 0; i < sorceryList.size(); ++i)
             {
                 displaySorcery(sorceryList.at(i));
                 if (i < sorceryList.size() - 1)
@@ -444,7 +457,7 @@ void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleLis
             std::cout << "\nEnter the Sorcery ID to be displayed: ";
             std::cin >> input;
             std::cout << "\n\n";
-            for (int i = 0; i < sorceryList.size(); ++i)
+            for (i = 0; i < sorceryList.size(); ++i)
             {
                 if (sorceryList[i].sorceryID == stoi(input))
                 {
@@ -465,7 +478,7 @@ void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleLis
         else if (choice == 4)
         {
             std::cout << "\n----------------------------------------------------\n" << std::endl;
-            for (int i = 0; i < miracleList.size(); ++i)
+            for (i = 0; i < miracleList.size(); ++i)
             {
                 std::cout << miracleList[i].miracleID << ": " << miracleList[i].miracleName << std::endl;
             }
@@ -475,7 +488,7 @@ void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleLis
         else if (choice == 5)
         {
             std::cout << "\n----------------------------------------------------\n" << std::endl;
-            for (int i = 0; i < miracleList.size(); ++i)
+            for (i = 0; i < miracleList.size(); ++i)
             {
                 displayMiracle(miracleList.at(i));
                 if (i < miracleList.size() - 1)
@@ -491,7 +504,7 @@ void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleLis
             std::cout << "\nEnter the Miracle ID to be displayed: ";
             std::cin >> input;
             std::cout << "\n\n";
-            for (int i = 0; i < miracleList.size(); ++i)
+            for (i = 0; i < miracleList.size(); ++i)
             {
                 if (miracleList[i].miracleID == stoi(input))
                 {
@@ -512,7 +525,7 @@ void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleLis
         else if (choice == 7)
         {
             std::cout << "\n----------------------------------------------------\n" << std::endl;
-            for (int i = 0; i < pyromancyList.size(); ++i)
+            for (i = 0; i < pyromancyList.size(); ++i)
             {
                 std::cout << pyromancyList[i].pyromancyID << ": " << pyromancyList[i].pyromancyName << std::endl;
             }
@@ -522,7 +535,7 @@ void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleLis
         else if (choice == 8)
         {
             std::cout << "\n----------------------------------------------------\n" << std::endl;
-            for (int i = 0; i < pyromancyList.size(); ++i)
+            for (i = 0; i < pyromancyList.size(); ++i)
             {
                 displayPyromancy(pyromancyList.at(i));
                 if (i < pyromancyList.size() - 1)
@@ -538,7 +551,7 @@ void magicMenu(std::vector<Sorcery> sorceryList, std::vector<Miracle> miracleLis
             std::cout << "\nEnter the Pyromancy ID to be displayed: ";
             std::cin >> input;
             std::cout << "\n\n";
-            for (int i = 0; i < pyromancyList.size(); ++i)
+            for (i = 0; i < pyromancyList.size(); ++i)
             {
                 if (pyromancyList[i].pyromancyID == stoi(input))
                 {

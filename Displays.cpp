@@ -2,6 +2,8 @@
 
 /*
  * Display the weapon information to the console (std::out)
+ * 
+ * @param weapon Weapon to display
  */
 void displayWeapon(Weapon weapon)
 {
@@ -116,6 +118,8 @@ void displayWeapon(Weapon weapon)
 
 /*
  * Display the shield information to the console (std::out)
+ * 
+ * @param shield Shield to display
  */
 void displayShield(Shield shield)
 {
@@ -169,6 +173,8 @@ void displayShield(Shield shield)
 
 /*
  * Display the armor information to the console (std::out)
+ * 
+ * @param armor Armor to display
  */
 void displayArmor(Armor armor)
 {
@@ -195,6 +201,8 @@ void displayArmor(Armor armor)
 
 /*
  * Display the ring information to the console (std::out)
+ * 
+ * @param ring Ring to display
  */
 void displayRing(Ring ring)
 {
@@ -251,6 +259,8 @@ void displayRing(Ring ring)
  * Display the ring information with acquisition descriptions to the console (std::out)
  * Ring acquisition methods are very lengthy and detailed, so this extra method felt necessary to include
  * so that the user may choose whether or not to view acquisition information
+ * 
+ * @param ring Ring to display
  */
 void displayRingWithAcq(Ring ring)
 {
@@ -291,6 +301,8 @@ void displayRingWithAcq(Ring ring)
 
 /*
  * Display the sorcery information to the console (std::out)
+ * 
+ * @param sorcery Sorcery to display
  */
 void displaySorcery(Sorcery sorcery)
 {
@@ -312,7 +324,7 @@ void displaySorcery(Sorcery sorcery)
     {
         for (int i = 0; i < acquisitionStrings.size(); ++i)
         {
-            if (acquisitionStrings.at(i).find("^") != std::string::npos)
+            if (acquisitionStrings.at(i).find('^') != std::string::npos)
             {
                 std::vector<std::string> acquisitionSubstr = splitString(acquisitionStrings.at(i), '^');
                 std::cout << acquisitionSubstr.at(0) << "\n" << acquisitionSubstr.at(1) << " ";
@@ -338,6 +350,8 @@ void displaySorcery(Sorcery sorcery)
 
 /*
  * Display the miracle information to the console (std::out)
+ * 
+ * @param miracle Miracle to display
  */
 void displayMiracle(Miracle miracle)
 {
@@ -357,7 +371,7 @@ void displayMiracle(Miracle miracle)
     else {
         for (int i = 0; i < acquisitionStrings.size(); ++i)
         {
-            if (acquisitionStrings.at(i).find("^") != std::string::npos)
+            if (acquisitionStrings.at(i).find('^') != std::string::npos)
             {
                 std::vector<std::string> acquisitionSubstr = splitString(acquisitionStrings.at(i), '^');
                 std::cout << acquisitionSubstr.at(0) << "\n" << acquisitionSubstr.at(1) << " ";
@@ -375,7 +389,7 @@ void displayMiracle(Miracle miracle)
 
     if (miracle.notes != "")
     {
-        if (miracle.notes.find("^") != std::string::npos)
+        if (miracle.notes.find('^') != std::string::npos)
         {
             std::vector<std::string> notesStrings = splitString(miracle.notes, ' ');
 
@@ -389,7 +403,7 @@ void displayMiracle(Miracle miracle)
                 for (int i = 0; i < notesStrings.size(); ++i)
                 {
                     std::vector<std::string> notesSubstr = splitString(notesStrings.at(i), '^');
-                    if (notesStrings.at(i).find("^") != std::string::npos)
+                    if (notesStrings.at(i).find('^') != std::string::npos)
                     {
                         std::cout << notesSubstr.at(0) << "\n" << notesSubstr.at(1) << " ";
                         notesSubstr.clear();
@@ -417,6 +431,8 @@ void displayMiracle(Miracle miracle)
 
 /*
  * Display the pyromancy information to the console (std::out)
+ * 
+ * @param pyromancy Pyromancy to display
  */
 void displayPyromancy(Pyromancy pyromancy)
 {

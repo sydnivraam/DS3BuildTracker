@@ -213,7 +213,12 @@ std::vector<Weapon> loadWeapons(std::string csvPath)
     return weaponList;
 }
 
-// same as above but for shields
+/*
+ * Load a .csv file containing shield information into a container
+ *
+ * @param csvPath the path to the .csv file to load
+ * @return a container holding all the shields read
+ */
 std::vector<Shield> loadShields(std::string csvPath)
 {
     std::vector<Shield> shieldList;
@@ -290,7 +295,12 @@ std::vector<Shield> loadShields(std::string csvPath)
     return shieldList;
 }
 
-// same as above but for armor
+/*
+ * Load a .csv file containing armor information into a container
+ *
+ * @param csvPath the path to the .csv file to load
+ * @return a container holding all the armor objects read
+ */
 std::vector<Armor> loadArmor(std::string csvPath)
 {
     std::vector<Armor> armorList;
@@ -342,7 +352,12 @@ std::vector<Armor> loadArmor(std::string csvPath)
     return armorList;
 }
 
-// same as above but for rings
+/*
+ * Load a .csv file containing ring information into a container
+ *
+ * @param csvPath the path to the .csv file to load
+ * @return a container holding all the rings read
+ */
 std::vector<Ring> loadRings(std::string csvPath)
 {
     std::vector<Ring> ringList;
@@ -381,7 +396,12 @@ std::vector<Ring> loadRings(std::string csvPath)
     return ringList;
 }
 
-// same as above but for sorceries
+/*
+ * Load a .csv file containing sorcery information into a container
+ *
+ * @param csvPath the path to the .csv file to load
+ * @return a container holding all the sorceries read
+ */
 std::vector<Sorcery> loadSorceries(std::string csvPath)
 {
     std::vector<Sorcery> sorceryList;
@@ -426,7 +446,12 @@ std::vector<Sorcery> loadSorceries(std::string csvPath)
     return sorceryList;
 }
 
-// same as above but for miracles
+/*
+ * Load a .csv file containing miracle information into a container
+ *
+ * @param csvPath the path to the .csv file to load
+ * @return a container holding all the miracles read
+ */
 std::vector<Miracle> loadMiracles(std::string csvPath)
 {
     std::vector<Miracle> miracleList;
@@ -471,7 +496,12 @@ std::vector<Miracle> loadMiracles(std::string csvPath)
     return miracleList;
 }
 
-// same as above but for pyromancies
+/*
+ * Load a .csv file containing pyromancy information into a container
+ *
+ * @param csvPath the path to the .csv file to load
+ * @return a container holding all the pyromancies read
+ */
 std::vector<Pyromancy> loadPyromancies(std::string csvPath)
 {
     std::vector<Pyromancy> pyromancyList;
